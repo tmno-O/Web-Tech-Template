@@ -1,0 +1,484 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Electric Planer Brandix KL370090G 300 Watts",
+      "slug": "electric-planer-brandix-kl370090g",
+      "image": "images/products/product-1.jpg",
+      "url": "product.html",
+      "badge": "new",
+      "rating": 4,
+      "reviews": 9,
+      "features": [
+        "Speed: 750 RPM",
+        "Power Source: Cordless-Electric",
+        "Battery Cell Type: Lithium",
+        "Voltage: 20 Volts",
+        "Battery Capacity: 2 Ah"
+      ],
+      "availability": "In Stock",
+      "price": 749.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 2,
+      "name": "Undefined Tool IRadix DPS3000SY 2700 Watts",
+      "slug": "undefined-tool-iradix-dps3000sy",
+      "image": "images/products/product-2.jpg",
+      "url": "product.html",
+      "badge": "hot",
+      "rating": 5,
+      "reviews": 11,
+      "features": [
+        "Power: 2700 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Chuck Size: 13 mm",
+        "No Load Speed: 3000 RPM"
+      ],
+      "availability": "In Stock",
+      "price": 1019.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 3,
+      "name": "Drill Screwdriver Brandix ALX7054 1500 RPM",
+      "slug": "drill-screwdriver-brandix-alx7054",
+      "image": "images/products/product-3.jpg",
+      "url": "product.html",
+      "badge": null,
+      "rating": 4,
+      "reviews": 14,
+      "features": [
+        "Speed: 1500 RPM",
+        "Power Source: Cordless-Electric",
+        "Battery Cell Type: Lithium",
+        "Voltage: 18 Volts",
+        "Battery Capacity: 4 Ah"
+      ],
+      "availability": "In Stock",
+      "price": 449.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 4,
+      "name": "Screwdriver Brandix ELX500S 1200 RPM",
+      "slug": "screwdriver-brandix-elx500s",
+      "image": "images/products/product-4.jpg",
+      "url": "product.html",
+      "badge": "sale",
+      "rating": 3,
+      "reviews": 7,
+      "features": [
+        "Speed: 1200 RPM",
+        "Power Source: Cordless-Electric",
+        "Battery Cell Type: Lithium",
+        "Voltage: 12 Volts",
+        "Battery Capacity: 2 Ah"
+      ],
+      "availability": "In Stock",
+      "price": 499.00,
+      "compareAtPrice": 699.00
+    },
+    {
+      "id": 5,
+      "name": "Angle Grinder Makita 9565HRZ 1400 Watts",
+      "slug": "angle-grinder-makita-9565hrz",
+      "image": "images/products/product-5.jpg",
+      "url": "product.html",
+      "badge": "hot",
+      "rating": 5,
+      "reviews": 23,
+      "features": [
+        "Power: 1400 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Disc Diameter: 125 mm",
+        "No Load Speed: 10000 RPM"
+      ],
+      "availability": "In Stock",
+      "price": 289.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 6,
+      "name": "Circular Saw Brandix CX7000N 2000 Watts",
+      "slug": "circular-saw-brandix-cx7000n",
+      "image": "images/products/product-6.jpg",
+      "url": "product.html",
+      "badge": "new",
+      "rating": 4,
+      "reviews": 6,
+      "features": [
+        "Power: 2000 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Blade Size: 7.25 Inch",
+        "No Load Speed: 5800 RPM"
+      ],
+      "availability": "In Stock",
+      "price": 649.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 7,
+      "name": "Rotary Hammer DeWalt D25133K 800 Watts",
+      "slug": "rotary-hammer-dewalt-d25133k",
+      "image": "images/products/product-7.jpg",
+      "url": "product.html",
+      "badge": null,
+      "rating": 4,
+      "reviews": 18,
+      "features": [
+        "Power: 800 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Chuck Size: 13 mm",
+        "Impact Rate: 0-5800 BPM"
+      ],
+      "availability": "In Stock",
+      "price": 399.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 8,
+      "name": "Jigsaw Bosch PST 900 PEL 620 Watts",
+      "slug": "jigsaw-bosch-pst-900-pel",
+      "image": "images/products/product-8.jpg",
+      "url": "product.html",
+      "badge": "sale",
+      "rating": 4,
+      "reviews": 31,
+      "features": [
+        "Power: 620 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Stroke Rate: 500-3100 SPM",
+        "Stroke Length: 23 mm"
+      ],
+      "availability": "In Stock",
+      "price": 159.00,
+      "compareAtPrice": 199.00
+    },
+    {
+      "id": 9,
+      "name": "Belt Sander Makita 9910 1010 Watts",
+      "slug": "belt-sander-makita-9910",
+      "image": "images/products/product-9.jpg",
+      "url": "product.html",
+      "badge": null,
+      "rating": 4,
+      "reviews": 12,
+      "features": [
+        "Power: 1010 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Belt Size: 76 x 533 mm",
+        "No Load Speed: 440 m/min"
+      ],
+      "availability": "In Stock",
+      "price": 259.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 10,
+      "name": "Random Orbital Sander Bosch GEX 125-150 AVE",
+      "slug": "random-orbital-sander-bosch-gex-125",
+      "image": "images/products/product-10.jpg",
+      "url": "product.html",
+      "badge": "new",
+      "rating": 5,
+      "reviews": 19,
+      "features": [
+        "Power: 400 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Sanding Disc Size: 125 mm",
+        "Orbits Per Minute: 4000-12000 OPM"
+      ],
+      "availability": "In Stock",
+      "price": 179.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 11,
+      "name": "Impact Wrench Milwaukee M18 FIWF12",
+      "slug": "impact-wrench-milwaukee-m18-fiwf12",
+      "image": "images/products/product-11.jpg",
+      "url": "product.html",
+      "badge": "hot",
+      "rating": 5,
+      "reviews": 27,
+      "features": [
+        "Speed: 0-2800 RPM",
+        "Power Source: Cordless-Electric",
+        "Battery Cell Type: Lithium",
+        "Voltage: 18 Volts",
+        "Battery Capacity: 5 Ah"
+      ],
+      "availability": "In Stock",
+      "price": 449.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 12,
+      "name": "Heat Gun Makita HG6530VK 2000 Watts",
+      "slug": "heat-gun-makita-hg6530vk",
+      "image": "images/products/product-12.jpg",
+      "url": "product.html",
+      "badge": null,
+      "rating": 3,
+      "reviews": 8,
+      "features": [
+        "Power: 2000 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Air Flow: 500 l/min",
+        "Temperature Range: 50-650 °C"
+      ],
+      "availability": "In Stock",
+      "price": 149.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 13,
+      "name": "Router Makita RP2301FC 3.25 HP",
+      "slug": "router-makita-rp2301fc",
+      "image": "images/products/product-13.jpg",
+      "url": "product.html",
+      "badge": "new",
+      "rating": 4,
+      "reviews": 15,
+      "features": [
+        "Power: 2100 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "No Load Speed: 9000-22000 RPM",
+        "Collet Size: 6/8/12 mm"
+      ],
+      "availability": "In Stock",
+      "price": 329.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 14,
+      "name": "Oscillating Multi-Tool Bosch GOP 55-36 550 Watts",
+      "slug": "oscillating-multi-tool-bosch-gop55-36",
+      "image": "images/products/product-14.jpg",
+      "url": "product.html",
+      "badge": null,
+      "rating": 4,
+      "reviews": 21,
+      "features": [
+        "Power: 550 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Oscillation Angle: 2.8 °",
+        "Oscillation Rate: 8000-20000 OPM"
+      ],
+      "availability": "In Stock",
+      "price": 219.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 15,
+      "name": "Demolition Hammer Bosch GSH 5 CE 1150 Watts",
+      "slug": "demolition-hammer-bosch-gsh5-ce",
+      "image": "images/products/product-15.jpg",
+      "url": "product.html",
+      "badge": "hot",
+      "rating": 5,
+      "reviews": 16,
+      "features": [
+        "Power: 1150 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Impact Rate: 1050-2900 BPM",
+        "Single Impact Energy: 8.3 J"
+      ],
+      "availability": "In Stock",
+      "price": 549.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 16,
+      "name": "Nailer DeWalt DCN693P2 18V Cordless",
+      "slug": "nailer-dewalt-dcn693p2",
+      "image": "images/products/product-16.jpg",
+      "url": "product.html",
+      "badge": "sale",
+      "rating": 4,
+      "reviews": 10,
+      "features": [
+        "Speed: 4 nails/sec",
+        "Power Source: Cordless-Electric",
+        "Battery Cell Type: Lithium",
+        "Voltage: 18 Volts",
+        "Battery Capacity: 5 Ah"
+      ],
+      "availability": "In Stock",
+      "price": 379.00,
+      "compareAtPrice": 459.00
+    },
+    {
+      "id": 17,
+      "name": "Laser Level Bosch GLL 3-80 CG Self-Leveling",
+      "slug": "laser-level-bosch-gll-3-80-cg",
+      "image": "images/products/product-3.jpg",
+      "url": "product.html",
+      "badge": "new",
+      "rating": 5,
+      "reviews": 34,
+      "features": [
+        "Working Range: 30 m",
+        "Power Source: Battery",
+        "Battery Cell Type: Lithium",
+        "Accuracy: ±0.2 mm/m",
+        "Laser Class: Class 2"
+      ],
+      "availability": "In Stock",
+      "price": 299.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 18,
+      "name": "Cordless Drill DeWalt DCD796P2 18V Brushless",
+      "slug": "cordless-drill-dewalt-dcd796p2",
+      "image": "images/products/product-5.jpg",
+      "url": "product.html",
+      "badge": null,
+      "rating": 5,
+      "reviews": 42,
+      "features": [
+        "Speed: 0-2000 RPM",
+        "Power Source: Cordless-Electric",
+        "Battery Cell Type: Lithium",
+        "Voltage: 18 Volts",
+        "Battery Capacity: 5 Ah"
+      ],
+      "availability": "In Stock",
+      "price": 389.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 19,
+      "name": "Air Compressor DeWalt DWFP55126 6 Gallon",
+      "slug": "air-compressor-dewalt-dwfp55126",
+      "image": "images/products/product-7.jpg",
+      "url": "product.html",
+      "badge": "hot",
+      "rating": 4,
+      "reviews": 29,
+      "features": [
+        "Power: 0.9 HP",
+        "Power Source: Corded-Electric",
+        "Voltage: 120 Volts",
+        "Tank Capacity: 6 Gallon",
+        "Max Pressure: 165 PSI"
+      ],
+      "availability": "In Stock",
+      "price": 189.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 20,
+      "name": "Table Saw Skilsaw SPT99-11 10-Inch 3600 Watts",
+      "slug": "table-saw-skilsaw-spt99-11",
+      "image": "images/products/product-9.jpg",
+      "url": "product.html",
+      "badge": null,
+      "rating": 5,
+      "reviews": 38,
+      "features": [
+        "Power: 3600 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Blade Size: 10 Inch",
+        "No Load Speed: 4800 RPM"
+      ],
+      "availability": "Out of Stock",
+      "price": 699.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 21,
+      "name": "Chainsaw Husqvarna 135 Mark II 38cm Bar 1500 Watts",
+      "slug": "chainsaw-husqvarna-135-mark-ii",
+      "image": "images/products/product-1.jpg",
+      "url": "product.html",
+      "badge": "new",
+      "rating": 5,
+      "reviews": 24,
+      "features": [
+        "Power: 1500 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Bar Length: 38 cm",
+        "Chain Speed: 11.5 m/s"
+      ],
+      "availability": "In Stock",
+      "price": 319.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 22,
+      "name": "Pressure Washer Karcher K5 Premium 2300 PSI",
+      "slug": "pressure-washer-karcher-k5-premium",
+      "image": "images/products/product-2.jpg",
+      "url": "product.html",
+      "badge": "hot",
+      "rating": 4,
+      "reviews": 47,
+      "features": [
+        "Power: 1400 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Max Pressure: 2300 PSI",
+        "Water Flow Rate: 500 l/h"
+      ],
+      "availability": "In Stock",
+      "price": 279.00,
+      "compareAtPrice": null
+    },
+    {
+      "id": 23,
+      "name": "Wet Dry Vacuum Ridgid WD1450 14 Gallon 6.0 HP",
+      "slug": "wet-dry-vacuum-ridgid-wd1450",
+      "image": "images/products/product-4.jpg",
+      "url": "product.html",
+      "badge": "sale",
+      "rating": 4,
+      "reviews": 33,
+      "features": [
+        "Power: 6.0 HP",
+        "Power Source: Corded-Electric",
+        "Voltage: 120 Volts",
+        "Tank Capacity: 14 Gallon",
+        "Hose Diameter: 2.5 Inch"
+      ],
+      "availability": "In Stock",
+      "price": 139.00,
+      "compareAtPrice": 179.00
+    },
+    {
+      "id": 24,
+      "name": "Miter Saw Makita LS1019L 10-Inch Dual-Bevel 1800 Watts",
+      "slug": "miter-saw-makita-ls1019l",
+      "image": "images/products/product-6.jpg",
+      "url": "product.html",
+      "badge": null,
+      "rating": 5,
+      "reviews": 52,
+      "features": [
+        "Power: 1800 Watts",
+        "Power Source: Corded-Electric",
+        "Voltage: 220 Volts",
+        "Blade Size: 10 Inch",
+        "No Load Speed: 3200 RPM"
+      ],
+      "availability": "In Stock",
+      "price": 579.00,
+      "compareAtPrice": null
+    }
+  ]
+}

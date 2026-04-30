@@ -9,6 +9,7 @@
       "badge": "new",
       "rating": 4,
       "reviews": 9,
+      "category": "Planers",
       "features": [
         "Speed: 750 RPM",
         "Power Source: Cordless-Electric",
@@ -17,8 +18,9 @@
         "Battery Capacity: 2 Ah"
       ],
       "availability": "In Stock",
-      "price": 749.00,
-      "compareAtPrice": null
+      "price": 749.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 2,
@@ -29,6 +31,7 @@
       "badge": "hot",
       "rating": 5,
       "reviews": 11,
+      "category": "Drills & Mixers",
       "features": [
         "Power: 2700 Watts",
         "Power Source: Corded-Electric",
@@ -37,8 +40,9 @@
         "No Load Speed: 3000 RPM"
       ],
       "availability": "In Stock",
-      "price": 1019.00,
-      "compareAtPrice": null
+      "price": 1019.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 3,
@@ -49,6 +53,7 @@
       "badge": null,
       "rating": 4,
       "reviews": 14,
+      "category": "Drills & Mixers",
       "features": [
         "Speed: 1500 RPM",
         "Power Source: Cordless-Electric",
@@ -57,8 +62,9 @@
         "Battery Capacity: 4 Ah"
       ],
       "availability": "In Stock",
-      "price": 449.00,
-      "compareAtPrice": null
+      "price": 449.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 4,
@@ -69,6 +75,7 @@
       "badge": "sale",
       "rating": 3,
       "reviews": 7,
+      "category": "Screwdrivers",
       "features": [
         "Speed: 1200 RPM",
         "Power Source: Cordless-Electric",
@@ -77,8 +84,9 @@
         "Battery Capacity: 2 Ah"
       ],
       "availability": "In Stock",
-      "price": 499.00,
-      "compareAtPrice": 699.00
+      "price": 499.0,
+      "compareAtPrice": 699.0,
+      "stock": 10
     },
     {
       "id": 5,
@@ -89,6 +97,7 @@
       "badge": "hot",
       "rating": 5,
       "reviews": 23,
+      "category": "Grinding Machines",
       "features": [
         "Power: 1400 Watts",
         "Power Source: Corded-Electric",
@@ -97,8 +106,9 @@
         "No Load Speed: 10000 RPM"
       ],
       "availability": "In Stock",
-      "price": 289.00,
-      "compareAtPrice": null
+      "price": 289.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 6,
@@ -109,6 +119,7 @@
       "badge": "new",
       "rating": 4,
       "reviews": 6,
+      "category": "Power Tools",
       "features": [
         "Power: 2000 Watts",
         "Power Source: Corded-Electric",
@@ -117,8 +128,9 @@
         "No Load Speed: 5800 RPM"
       ],
       "availability": "In Stock",
-      "price": 649.00,
-      "compareAtPrice": null
+      "price": 649.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 7,
@@ -129,6 +141,7 @@
       "badge": null,
       "rating": 4,
       "reviews": 18,
+      "category": "Drills & Mixers",
       "features": [
         "Power: 800 Watts",
         "Power Source: Corded-Electric",
@@ -137,8 +150,9 @@
         "Impact Rate: 0-5800 BPM"
       ],
       "availability": "In Stock",
-      "price": 399.00,
-      "compareAtPrice": null
+      "price": 399.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 8,
@@ -149,6 +163,7 @@
       "badge": "sale",
       "rating": 4,
       "reviews": 31,
+      "category": "Jigsaws",
       "features": [
         "Power: 620 Watts",
         "Power Source: Corded-Electric",
@@ -157,8 +172,9 @@
         "Stroke Length: 23 mm"
       ],
       "availability": "In Stock",
-      "price": 159.00,
-      "compareAtPrice": 199.00
+      "price": 159.0,
+      "compareAtPrice": 199.0,
+      "stock": 10
     },
     {
       "id": 9,
@@ -169,6 +185,7 @@
       "badge": null,
       "rating": 4,
       "reviews": 12,
+      "category": "Grinding Machines",
       "features": [
         "Power: 1010 Watts",
         "Power Source: Corded-Electric",
@@ -177,8 +194,9 @@
         "No Load Speed: 440 m/min"
       ],
       "availability": "In Stock",
-      "price": 259.00,
-      "compareAtPrice": null
+      "price": 259.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 10,
@@ -189,6 +207,7 @@
       "badge": "new",
       "rating": 5,
       "reviews": 19,
+      "category": "Grinding Machines",
       "features": [
         "Power: 400 Watts",
         "Power Source: Corded-Electric",
@@ -197,8 +216,9 @@
         "Orbits Per Minute: 4000-12000 OPM"
       ],
       "availability": "In Stock",
-      "price": 179.00,
-      "compareAtPrice": null
+      "price": 179.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 11,
@@ -209,6 +229,7 @@
       "badge": "hot",
       "rating": 5,
       "reviews": 27,
+      "category": "Wrenches",
       "features": [
         "Speed: 0-2800 RPM",
         "Power Source: Cordless-Electric",
@@ -217,8 +238,9 @@
         "Battery Capacity: 5 Ah"
       ],
       "availability": "In Stock",
-      "price": 449.00,
-      "compareAtPrice": null
+      "price": 449.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 12,
@@ -229,16 +251,18 @@
       "badge": null,
       "rating": 3,
       "reviews": 8,
+      "category": "Electric Spray Guns",
       "features": [
         "Power: 2000 Watts",
         "Power Source: Corded-Electric",
         "Voltage: 220 Volts",
         "Air Flow: 500 l/min",
-        "Temperature Range: 50-650 °C"
+        "Temperature Range: 50-650 \u00b0C"
       ],
       "availability": "In Stock",
-      "price": 149.00,
-      "compareAtPrice": null
+      "price": 149.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 13,
@@ -249,6 +273,7 @@
       "badge": "new",
       "rating": 4,
       "reviews": 15,
+      "category": "Power Tools",
       "features": [
         "Power: 2100 Watts",
         "Power Source: Corded-Electric",
@@ -257,8 +282,9 @@
         "Collet Size: 6/8/12 mm"
       ],
       "availability": "In Stock",
-      "price": 329.00,
-      "compareAtPrice": null
+      "price": 329.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 14,
@@ -269,16 +295,18 @@
       "badge": null,
       "rating": 4,
       "reviews": 21,
+      "category": "Power Tools",
       "features": [
         "Power: 550 Watts",
         "Power Source: Corded-Electric",
         "Voltage: 220 Volts",
-        "Oscillation Angle: 2.8 °",
+        "Oscillation Angle: 2.8 \u00b0",
         "Oscillation Rate: 8000-20000 OPM"
       ],
       "availability": "In Stock",
-      "price": 219.00,
-      "compareAtPrice": null
+      "price": 219.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 15,
@@ -289,6 +317,7 @@
       "badge": "hot",
       "rating": 5,
       "reviews": 16,
+      "category": "Jackhammers",
       "features": [
         "Power: 1150 Watts",
         "Power Source: Corded-Electric",
@@ -297,8 +326,9 @@
         "Single Impact Energy: 8.3 J"
       ],
       "availability": "In Stock",
-      "price": 549.00,
-      "compareAtPrice": null
+      "price": 549.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 16,
@@ -309,6 +339,7 @@
       "badge": "sale",
       "rating": 4,
       "reviews": 10,
+      "category": "Power Tools",
       "features": [
         "Speed: 4 nails/sec",
         "Power Source: Cordless-Electric",
@@ -317,8 +348,9 @@
         "Battery Capacity: 5 Ah"
       ],
       "availability": "In Stock",
-      "price": 379.00,
-      "compareAtPrice": 459.00
+      "price": 379.0,
+      "compareAtPrice": 459.0,
+      "stock": 10
     },
     {
       "id": 17,
@@ -329,16 +361,18 @@
       "badge": "new",
       "rating": 5,
       "reviews": 34,
+      "category": "Instruments",
       "features": [
         "Working Range: 30 m",
         "Power Source: Battery",
         "Battery Cell Type: Lithium",
-        "Accuracy: ±0.2 mm/m",
+        "Accuracy: \u00b10.2 mm/m",
         "Laser Class: Class 2"
       ],
       "availability": "In Stock",
-      "price": 299.00,
-      "compareAtPrice": null
+      "price": 299.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 18,
@@ -349,6 +383,7 @@
       "badge": null,
       "rating": 5,
       "reviews": 42,
+      "category": "Drills & Mixers",
       "features": [
         "Speed: 0-2000 RPM",
         "Power Source: Cordless-Electric",
@@ -357,8 +392,9 @@
         "Battery Capacity: 5 Ah"
       ],
       "availability": "In Stock",
-      "price": 389.00,
-      "compareAtPrice": null
+      "price": 389.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 19,
@@ -369,6 +405,7 @@
       "badge": "hot",
       "rating": 4,
       "reviews": 29,
+      "category": "Power Tools",
       "features": [
         "Power: 0.9 HP",
         "Power Source: Corded-Electric",
@@ -377,8 +414,9 @@
         "Max Pressure: 165 PSI"
       ],
       "availability": "In Stock",
-      "price": 189.00,
-      "compareAtPrice": null
+      "price": 189.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 20,
@@ -389,6 +427,7 @@
       "badge": null,
       "rating": 5,
       "reviews": 38,
+      "category": "Power Tools",
       "features": [
         "Power: 3600 Watts",
         "Power Source: Corded-Electric",
@@ -397,8 +436,9 @@
         "No Load Speed: 4800 RPM"
       ],
       "availability": "Out of Stock",
-      "price": 699.00,
-      "compareAtPrice": null
+      "price": 699.0,
+      "compareAtPrice": null,
+      "stock": 0
     },
     {
       "id": 21,
@@ -409,6 +449,7 @@
       "badge": "new",
       "rating": 5,
       "reviews": 24,
+      "category": "Power Tools",
       "features": [
         "Power: 1500 Watts",
         "Power Source: Corded-Electric",
@@ -417,8 +458,9 @@
         "Chain Speed: 11.5 m/s"
       ],
       "availability": "In Stock",
-      "price": 319.00,
-      "compareAtPrice": null
+      "price": 319.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 22,
@@ -429,6 +471,7 @@
       "badge": "hot",
       "rating": 4,
       "reviews": 47,
+      "category": "Power Tools",
       "features": [
         "Power: 1400 Watts",
         "Power Source: Corded-Electric",
@@ -437,8 +480,9 @@
         "Water Flow Rate: 500 l/h"
       ],
       "availability": "In Stock",
-      "price": 279.00,
-      "compareAtPrice": null
+      "price": 279.0,
+      "compareAtPrice": null,
+      "stock": 10
     },
     {
       "id": 23,
@@ -449,6 +493,7 @@
       "badge": "sale",
       "rating": 4,
       "reviews": 33,
+      "category": "Power Tools",
       "features": [
         "Power: 6.0 HP",
         "Power Source: Corded-Electric",
@@ -457,8 +502,9 @@
         "Hose Diameter: 2.5 Inch"
       ],
       "availability": "In Stock",
-      "price": 139.00,
-      "compareAtPrice": 179.00
+      "price": 139.0,
+      "compareAtPrice": 179.0,
+      "stock": 10
     },
     {
       "id": 24,
@@ -469,6 +515,7 @@
       "badge": null,
       "rating": 5,
       "reviews": 52,
+      "category": "Power Tools",
       "features": [
         "Power: 1800 Watts",
         "Power Source: Corded-Electric",
@@ -477,8 +524,9 @@
         "No Load Speed: 3200 RPM"
       ],
       "availability": "In Stock",
-      "price": 579.00,
-      "compareAtPrice": null
+      "price": 579.0,
+      "compareAtPrice": null,
+      "stock": 10
     }
   ]
 }

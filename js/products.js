@@ -193,13 +193,13 @@ function buildProductCard(product) {
                     ${buildBadge(product.badge)}
                 </div>
                 <div class="product-card__image">
-                    <a href="${product.url}">
+                    <a href="${product.url}?id=${product.id}">
                         <img src="${product.image}" alt="${product.name}">
                     </a>
                 </div>
                 <div class="product-card__info">
                     <div class="product-card__name">
-                        <a href="${product.url}">${product.name}</a>
+                        <a href="${product.url}?id=${product.id}">${product.name}</a>
                     </div>
                     <div class="product-card__rating">
                         <div class="rating">

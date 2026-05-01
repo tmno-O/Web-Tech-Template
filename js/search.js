@@ -1,13 +1,5 @@
 // ============================================================
 //  search.js — Search Results Page
-//
-//  Flow:
-//    1. Read ?q= from URL
-//    2. Pre-fill the search bar
-//    3. Fetch products.json
-//    4. Filter products whose name contains the query
-//    5. Sort (if sort-select changes)
-//    6. Render into #product-container
 // ============================================================
 
 const PRODUCTS_URL = 'data/json/products.json';
@@ -18,22 +10,26 @@ let sortOrder   = 'default';
 document.addEventListener('DOMContentLoaded', function () {
     var query = getQueryParam('q');
 
-    // Pre-fill the search bar with the current query
     var input = document.getElementById('search-page-input');
     if (input && query) {
         input.value = query;
     }
 
-    // Wire up sort select
     var sortSelect = document.getElementById('sort-select');
     if (sortSelect) {
         sortSelect.addEventListener('change', function () {
             sortOrder = this.value;
-            renderResults(query);
+            renderResults(input ? input.value : query);
         });
     }
 
-    // Fetch and render
+    // Real-time filtering as user types
+    if (input) {
+        input.addEventListener('input', function () {
+            renderResults(input.value);
+        });
+    }
+
     var container = document.getElementById('product-container');
     if (!container) return;
 
@@ -60,7 +56,6 @@ function renderResults(query) {
 
     var results = allProducts;
 
-    // Filter by query
     if (query && query.trim() !== '') {
         var q = query.trim().toLowerCase();
         results = results.filter(function (p) {
@@ -69,10 +64,8 @@ function renderResults(query) {
         });
     }
 
-    // Sort
     results = sortProducts(results.slice(), sortOrder);
 
-    // Results count text
     if (countEl) {
         if (!query || query.trim() === '') {
             countEl.textContent = 'Showing all ' + results.length + ' products';
@@ -85,7 +78,6 @@ function renderResults(query) {
         }
     }
 
-    // Render cards or empty state
     if (results.length === 0) {
         container.innerHTML =
             '<div class="w-100 text-center py-5">' +
@@ -101,17 +93,17 @@ function renderResults(query) {
 
 // ── sortProducts() ───────────────────────────────────────────
 function sortProducts(products, order) {
-    if (order === 'name-az')   return products.sort(function (a, b) { return a.name.localeCompare(b.name); });
-    if (order === 'name-za')   return products.sort(function (a, b) { return b.name.localeCompare(a.name); });
-    if (order === 'price-low') return products.sort(function (a, b) { return a.price - b.price; });
-    if (order === 'price-high')return products.sort(function (a, b) { return b.price - a.price; });
+    if (order === 'name-az')    return products.sort(function (a, b) { return a.name.localeCompare(b.name); });
+    if (order === 'name-za')    return products.sort(function (a, b) { return b.name.localeCompare(a.name); });
+    if (order === 'price-low')  return products.sort(function (a, b) { return a.price - b.price; });
+    if (order === 'price-high') return products.sort(function (a, b) { return b.price - a.price; });
     return products.sort(function (a, b) { return a.id - b.id; });
 }
 
 
 // ── getQueryParam() ─────────────────────────────────────────
 function getQueryParam(name) {
-    var url    = new URL(window.location.href);
+    var url = new URL(window.location.href);
     return url.searchParams.get(name) || '';
 }
 
@@ -130,9 +122,9 @@ function buildProductCard(product) {
         '<div class="product-card">' +
         '<button class="product-card__quickview" type="button"><svg width="16px" height="16px"><use xlink:href="images/sprite.svg#quickview-16"></use></svg><span class="fake-svg-icon"></span></button>' +
         '<div class="product-card__badges-list">' + buildBadge(product.badge) + '</div>' +
-        '<div class="product-card__image"><a href="' + product.url + '"><img src="' + product.image + '" alt="' + escapeHtml(product.name) + '"></a></div>' +
+        '<div class="product-card__image"><a href="' + product.url + '?id=' + product.id + '"><img src="' + product.image + '" alt="' + escapeHtml(product.name) + '"></a></div>' +
         '<div class="product-card__info">' +
-        '<div class="product-card__name"><a href="' + product.url + '">' + product.name + '</a></div>' +
+        '<div class="product-card__name"><a href="' + product.url + '?id=' + product.id + '">' + product.name + '</a></div>' +
         '<div class="product-card__rating"><div class="rating"><div class="rating__body">' + buildStars(product.rating) + '</div></div>' +
         '<div class="product-card__rating-legend">' + product.reviews + ' Reviews</div></div>' +
         '<ul class="product-card__features-list">' + buildFeatures(product.features) + '</ul>' +

@@ -1,1 +1,72 @@
-[]
+[
+  {
+    "id": "u001",
+    "name": "Alice Johnson",
+    "email": "alice.johnson@email.com",
+    "password": "$2b$10$kHxsCJ9H8bwhvPa2ynQngey3qq0PTZw8lZ5eyC/7NLYtmGICs2tCu",
+    "registrationDate": "2025-01-15T08:30:00.000Z"
+  },
+  {
+    "id": "u002",
+    "name": "Bob Smith",
+    "email": "bob.smith@email.com",
+    "password": "$2b$10$MQ1Hzs0IfnLptqSGW.YPOe.HWc7b/4yKhwkpJBTSvI0b8hotloHE.",
+    "registrationDate": "2025-02-03T14:20:00.000Z"
+  },
+  {
+    "id": "u003",
+    "name": "Carol White",
+    "email": "carol.white@email.com",
+    "password": "$2b$10$1P/jRDk7QXyKGsmFaKVvOe1sw4XzjPje9tr8IN67THvMlkd2dHcjq",
+    "registrationDate": "2025-02-20T09:10:00.000Z"
+  },
+  {
+    "id": "u004",
+    "name": "David Brown",
+    "email": "david.brown@email.com",
+    "password": "$2b$10$rN27BP2uBfh2gt5e44IJ6OjGK5qf/zzMGMqkjWPW1ENcQpA83x4pa",
+    "registrationDate": "2025-03-05T17:45:00.000Z"
+  },
+  {
+    "id": "u005",
+    "name": "Eva Martinez",
+    "email": "eva.martinez@email.com",
+    "password": "$2b$10$4lPR/wOosAX7bGl65KrgaefH2CtaXtnOXiTRoFQGaKS7pn3LwvEnW",
+    "registrationDate": "2025-03-18T11:00:00.000Z"
+  },
+  {
+    "id": "u006",
+    "name": "Frank Lee",
+    "email": "frank.lee@email.com",
+    "password": "$2b$10$LVfR189PaMzhy4L8C.00QeCq2hn5pqd9UAYmnMeC8YFYvmB7uQJyG",
+    "registrationDate": "2025-04-02T13:25:00.000Z"
+  },
+  {
+    "id": "u007",
+    "name": "Grace Kim",
+    "email": "grace.kim@email.com",
+    "password": "$2b$10$36XwCcGtfyfwSnx/9s/YwupnzKrYfe88i75lYJXe3uB/CNQQwLFqG",
+    "registrationDate": "2025-04-15T16:55:00.000Z"
+  },
+  {
+    "id": "u008",
+    "name": "Henry Davis",
+    "email": "henry.davis@email.com",
+    "password": "$2b$10$GscFokb3AyNdB.Y8p89TPedG8kyex7YUrO8CAmPiyR46hhDaVpFFe",
+    "registrationDate": "2025-04-28T10:15:00.000Z"
+  },
+  {
+    "id": "u009",
+    "name": "Iris Thompson",
+    "email": "iris.thompson@email.com",
+    "password": "$2b$10$YEDyARWzeuAidZWn7ycqEuJlFFC1cDP9ixm2nQSCmFFKy4Q4SUVnS",
+    "registrationDate": "2025-05-10T08:40:00.000Z"
+  },
+  {
+    "id": "u010",
+    "name": "James Wilson",
+    "email": "james.wilson@email.com",
+    "password": "$2b$10$a9bB4v2FD8tbzay4oiOqQ.xMBjldaIIskTNY1wg45NPjBnLR/Ih4S",
+    "registrationDate": "2025-05-22T12:00:00.000Z"
+  }
+]

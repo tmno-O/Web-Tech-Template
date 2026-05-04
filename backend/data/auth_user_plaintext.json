@@ -1,0 +1,52 @@
+[
+  {
+    "id": "u001",
+    "email": "alice.johnson@email.com",
+    "password": "Password1!"
+  },
+  {
+    "id": "u002",
+    "email": "bob.smith@email.com",
+    "password": "Secure@2025"
+  },
+  {
+    "id": "u003",
+    "email": "carol.white@email.com",
+    "password": "Hello#World3"
+  },
+  {
+    "id": "u004",
+    "email": "david.brown@email.com",
+    "password": "MyPass$4ever"
+  },
+  {
+    "id": "u005",
+    "email": "eva.martinez@email.com",
+    "password": "Eva!2025Pwd"
+  },
+  {
+    "id": "u006",
+    "email": "frank.lee@email.com",
+    "password": "Fr@nk2025OK"
+  },
+  {
+    "id": "u007",
+    "email": "grace.kim@email.com",
+    "password": "GraceK!2025"
+  },
+  {
+    "id": "u008",
+    "email": "henry.davis@email.com",
+    "password": "H3nry@Secure"
+  },
+  {
+    "id": "u009",
+    "email": "iris.thompson@email.com",
+    "password": "Iris!Pass9"
+  },
+  {
+    "id": "u010",
+    "email": "james.wilson@email.com",
+    "password": "James$2025!"
+  }
+]

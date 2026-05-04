@@ -14,6 +14,7 @@ const cors    = require('cors');     // Import CORS middleware to allow cross-or
 
 const productsRouter = require('./routes/products');  // Import the products router
 const registerRouter = require('./routes/register');  // Import the registration router
+const loginRouter    = require('./routes/login');     // Import the login router
 
 const app  = express();              // Create the Express application instance
 const PORT = process.env.PORT || 3000; // Use environment PORT or default to 3000
@@ -29,10 +30,13 @@ app.use(express.json());
 app.use('/api/products', productsRouter);
 // Mount the register router — handles POST /api/register
 app.use('/api/register', registerRouter);
+// Mount the login router — handles POST /api/login
+app.use('/api', loginRouter);
 
 // ── Start Server ──────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
     console.log(`[Server] Running at http://localhost:${PORT}`);
     console.log(`[Server] Products: http://localhost:${PORT}/api/products?category=hat`);
     console.log(`[Server] Register: POST http://localhost:${PORT}/api/register`);
+    console.log(`[Server] Login:    POST http://localhost:${PORT}/api/login`);
 });

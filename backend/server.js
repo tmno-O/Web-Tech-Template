@@ -17,13 +17,15 @@ const registerRouter = require('./routes/register');  // Import the registration
 const loginRouter    = require('./routes/login');     // Import the login router
 
 const app  = express();              // Create the Express application instance
-const PORT = process.env.PORT || 3000; // Use environment PORT or default to 3000
+const PORT = process.env.PORT || 3001; // Use environment PORT or default to 3001
 
 // ── Middleware ────────────────────────────────────────────────────────────────
 // Allow cross-origin requests so the Stroyka frontend can call this API
 app.use(cors());
 // Parse incoming JSON request bodies so req.body is populated
 app.use(express.json());
+// Serve static files (test.html) from the backend folder
+app.use(express.static(__dirname));
 
 // ── API Routes ────────────────────────────────────────────────────────────────
 // Mount the products router — handles GET /api/products

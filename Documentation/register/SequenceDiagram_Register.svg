@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" font-family="Arial, sans-serif" font-size="13">
+
+  <!-- Background -->
+  <rect width="900" height="620" fill="#f9f9f9" rx="8"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">Sequence Diagram — User Registration</text>
+  <text x="450" y="55" text-anchor="middle" font-size="12" fill="#666">960121 Web Technology · Session 06</text>
+
+  <!-- ── Lifeline labels ── -->
+  <rect x="40"  y="75" width="110" height="36" rx="6" fill="#4a7c9e" />
+  <text x="95"  y="98" text-anchor="middle" fill="white" font-weight="bold">Client</text>
+
+  <rect x="210" y="75" width="130" height="36" rx="6" fill="#4a7c9e"/>
+  <text x="275" y="98" text-anchor="middle" fill="white" font-weight="bold">API Gateway</text>
+
+  <rect x="410" y="75" width="130" height="36" rx="6" fill="#4a7c9e"/>
+  <text x="475" y="98" text-anchor="middle" fill="white" font-weight="bold">Backend</text>
+
+  <rect x="620" y="75" width="130" height="36" rx="6" fill="#4a7c9e"/>
+  <text x="685" y="98" text-anchor="middle" fill="white" font-weight="bold">auth_user.json</text>
+
+  <!-- ── Lifelines (dashed vertical) ── -->
+  <line x1="95"  y1="111" x2="95"  y2="590" stroke="#aaa" stroke-dasharray="5,4" stroke-width="1.5"/>
+  <line x1="275" y1="111" x2="275" y2="590" stroke="#aaa" stroke-dasharray="5,4" stroke-width="1.5"/>
+  <line x1="475" y1="111" x2="475" y2="590" stroke="#aaa" stroke-dasharray="5,4" stroke-width="1.5"/>
+  <line x1="685" y1="111" x2="685" y2="590" stroke="#aaa" stroke-dasharray="5,4" stroke-width="1.5"/>
+
+  <!-- ── Step 1: Client → API Gateway ── -->
+  <line x1="95" y1="145" x2="265" y2="145" stroke="#2c7bb6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="180" y="138" text-anchor="middle" fill="#2c7bb6" font-size="12">POST /api/register</text>
+  <text x="180" y="156" text-anchor="middle" fill="#555" font-size="11">{ name, email, password } via HTTPS</text>
+
+  <!-- ── Step 2: API Gateway → Backend ── -->
+  <line x1="275" y1="185" x2="465" y2="185" stroke="#2c7bb6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="370" y="178" text-anchor="middle" fill="#2c7bb6" font-size="12">Route to /api/register handler</text>
+
+  <!-- ── Step 3: Backend validates (internal box) ── -->
+  <rect x="390" y="205" width="170" height="68" rx="5" fill="#fff8dc" stroke="#e0c040" stroke-width="1.5"/>
+  <text x="475" y="222" text-anchor="middle" font-weight="bold" fill="#7a6000" font-size="12">Backend Validates</text>
+  <text x="475" y="238" text-anchor="middle" fill="#555" font-size="11">• All fields present?</text>
+  <text x="475" y="252" text-anchor="middle" fill="#555" font-size="11">• Valid email format?</text>
+  <text x="475" y="266" text-anchor="middle" fill="#555" font-size="11">• Password rules met?</text>
+
+  <!-- ── Step 4: Backend → auth_user.json (read) ── -->
+  <line x1="475" y1="285" x2="675" y2="285" stroke="#2c7bb6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="575" y="278" text-anchor="middle" fill="#2c7bb6" font-size="12">readFile(auth_user.json)</text>
+
+  <!-- ── Step 5: auth_user.json → Backend (return users array) ── -->
+  <line x1="675" y1="310" x2="485" y2="310" stroke="#888" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrowGray)"/>
+  <text x="575" y="303" text-anchor="middle" fill="#555" font-size="11">Return users array</text>
+
+  <!-- ── Step 6: Backend checks duplicate (internal) ── -->
+  <rect x="390" y="325" width="170" height="42" rx="5" fill="#fff8dc" stroke="#e0c040" stroke-width="1.5"/>
+  <text x="475" y="342" text-anchor="middle" font-weight="bold" fill="#7a6000" font-size="12">Duplicate Check</text>
+  <text x="475" y="358" text-anchor="middle" fill="#555" font-size="11">users.find(u =&gt; u.email === email)</text>
+
+  <!-- ── Step 7: Backend hashes password (internal) ── -->
+  <rect x="390" y="380" width="170" height="42" rx="5" fill="#fff8dc" stroke="#e0c040" stroke-width="1.5"/>
+  <text x="475" y="397" text-anchor="middle" font-weight="bold" fill="#7a6000" font-size="12">Hash Password</text>
+  <text x="475" y="413" text-anchor="middle" fill="#555" font-size="11">bcrypt.hash(password, 10)</text>
+
+  <!-- ── Step 8: Backend → auth_user.json (write) ── -->
+  <line x1="475" y1="435" x2="675" y2="435" stroke="#2c7bb6" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="575" y="428" text-anchor="middle" fill="#2c7bb6" font-size="12">writeFile(newUser)</text>
+  <text x="575" y="446" text-anchor="middle" fill="#555" font-size="11">{ id, name, email, hashedPwd, date }</text>
+
+  <!-- ── Step 9: Backend → API Gateway (201 response) ── -->
+  <line x1="465" y1="475" x2="285" y2="475" stroke="#27ae60" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrowGreen)"/>
+  <text x="370" y="468" text-anchor="middle" fill="#27ae60" font-size="12">201 Created</text>
+  <text x="370" y="486" text-anchor="middle" fill="#555" font-size="11">{ message, user: { id, name, email, date } }</text>
+
+  <!-- ── Step 10: API Gateway → Client ── -->
+  <line x1="265" y1="515" x2="105" y2="515" stroke="#27ae60" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrowGreen)"/>
+  <text x="180" y="508" text-anchor="middle" fill="#27ae60" font-size="12">201 Created — Registration OK</text>
+
+  <!-- ── Step 11: Client stores nothing / shows message ── -->
+  <rect x="10" y="530" width="170" height="36" rx="5" fill="#eafaea" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="95" y="547" text-anchor="middle" font-weight="bold" fill="#27ae60" font-size="12">Show Success Message</text>
+  <text x="95" y="561" text-anchor="middle" fill="#555" font-size="11">"Account created successfully!"</text>
+
+  <!-- ── Arrow markers ── -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2c7bb6"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#888"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+</svg>

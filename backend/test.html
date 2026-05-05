@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API Tester — Session 06</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+    h1   { color: #2C3E50; }
+    h2   { color: #2980B9; border-bottom: 2px solid #2980B9; padding-bottom: 6px; }
+    input { width: 100%; padding: 8px; margin: 6px 0 12px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #2980B9; color: white; padding: 10px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 15px; }
+    button:hover { background: #1a6fa0; }
+    pre  { background: #2C3E50; color: #ECF0F1; padding: 16px; border-radius: 6px; white-space: pre-wrap; word-break: break-all; font-size: 13px; }
+    .section { background: white; padding: 20px; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+  </style>
+</head>
+<body>
+
+<h1>API Tester — Course 960121</h1>
+
+<!-- LOGIN -->
+<div class="section">
+  <h2>POST /api/login</h2>
+  <label>Email</label>
+  <input id="login-email" type="email" value="alice.johnson@email.com">
+  <label>Password</label>
+  <input id="login-password" type="password" value="Password1!">
+  <button onclick="testLogin()">Login</button>
+  <pre id="login-result">— result will appear here —</pre>
+</div>
+
+<!-- REGISTER -->
+<div class="section">
+  <h2>POST /api/register</h2>
+  <label>Name</label>
+  <input id="reg-name" type="text" value="Test User">
+  <label>Email</label>
+  <input id="reg-email" type="email" value="test@example.com">
+  <label>Password</label>
+  <input id="reg-password" type="password" value="Hello@123">
+  <button onclick="testRegister()">Register</button>
+  <pre id="reg-result">— result will appear here —</pre>
+</div>
+
+<script>
+  const BASE = 'http://localhost:3001';
+
+  async function testLogin() {
+    const body = {
+      email:    document.getElementById('login-email').value,
+      password: document.getElementById('login-password').value
+    };
+    const out = document.getElementById('login-result');
+    try {
+      const res  = await fetch(`${BASE}/api/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+      out.textContent = `Status: ${res.status}\n\n${JSON.stringify(data, null, 2)}`;
+      out.style.background = res.ok ? '#27AE60' : '#E74C3C';
+    } catch (e) {
+      out.textContent = 'Error: ' + e.message;
+      out.style.background = '#E74C3C';
+    }
+  }
+
+  async function testRegister() {
+    const body = {
+      name:     document.getElementById('reg-name').value,
+      email:    document.getElementById('reg-email').value,
+      password: document.getElementById('reg-password').value
+    };
+    const out = document.getElementById('reg-result');
+    try {
+      const res  = await fetch(`${BASE}/api/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      const data = await res.json();
+      out.textContent = `Status: ${res.status}\n\n${JSON.stringify(data, null, 2)}`;
+      out.style.background = res.ok ? '#27AE60' : '#E74C3C';
+    } catch (e) {
+      out.textContent = 'Error: ' + e.message;
+      out.style.background = '#E74C3C';
+    }
+  }
+</script>
+
+</body>
+</html>

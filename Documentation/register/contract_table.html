@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API Contract Table — User Registration</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; color: #222; line-height: 1.6; }
+    h1 { font-size: 22px; border-bottom: 3px solid #4a7c9e; padding-bottom: 8px; color: #4a7c9e; }
+    h2 { font-size: 16px; margin-top: 28px; color: #333; border-left: 4px solid #4a7c9e; padding-left: 10px; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; font-size: 13px; }
+    th { background: #4a7c9e; color: white; padding: 10px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #ddd; vertical-align: top; }
+    tr:nth-child(even) td { background: #f4f8fb; }
+    code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+    pre { background: #f0f0f0; padding: 14px; border-radius: 5px; font-size: 12px; overflow-x: auto; }
+    .badge-required { background: #e74c3c; color: white; border-radius: 3px; padding: 1px 6px; font-size: 11px; }
+    .meta { font-size: 12px; color: #666; margin-bottom: 30px; }
+    .note { background: #fffbea; border-left: 4px solid #f1c40f; padding: 10px 14px; margin-top: 10px; font-size: 13px; }
+    @media print { body { margin: 20px; } }
+  </style>
+</head>
+<body>
+
+<h1>API Contract Table — User Registration</h1>
+<p class="meta">
+  <strong>Course:</strong> 960121 Web Technology &nbsp;|&nbsp;
+  <strong>Session:</strong> 06 — Security &amp; Auth Logic &nbsp;|&nbsp;
+  <strong>Feature:</strong> POST /api/register &nbsp;|&nbsp;
+  <strong>Last Updated:</strong> 2026-05-05
+</p>
+
+<h2>Endpoint Overview</h2>
+<table>
+  <tr><th>Component</th><th>Details</th></tr>
+  <tr><td>Method</td><td><code>POST</code></td></tr>
+  <tr><td>Endpoint</td><td><code>/api/register</code></td></tr>
+  <tr><td>Description</td><td>Registers a new user account. Validates all fields, checks for duplicate email, hashes the password with bcrypt, and saves the user to <code>auth_user.json</code>.</td></tr>
+  <tr><td>Auth Required</td><td>None</td></tr>
+  <tr><td>Content-Type</td><td><code>application/json</code></td></tr>
+</table>
+
+<h2>Request Body</h2>
+<table>
+  <tr><th>Field</th><th>Type</th><th>Required</th><th>Validation Rules</th></tr>
+  <tr>
+    <td><code>name</code></td><td>String</td>
+    <td><span class="badge-required">Yes</span></td>
+    <td>Must be a non-empty string</td>
+  </tr>
+  <tr>
+    <td><code>email</code></td><td>String</td>
+    <td><span class="badge-required">Yes</span></td>
+    <td>Valid email format (contains <code>@</code> and <code>.</code>); must be unique in the system</td>
+  </tr>
+  <tr>
+    <td><code>password</code></td><td>String</td>
+    <td><span class="badge-required">Yes</span></td>
+    <td>Minimum 8 characters; at least 1 uppercase letter (A–Z); at least 1 special character from <code>!@#$%^&amp;*</code></td>
+  </tr>
+</table>
+
+<p><strong>Example Request Body:</strong></p>
+<pre>POST /api/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Alice Smith",
+  "email": "alice@example.com",
+  "password": "Secret@1"
+}</pre>
+
+<h2>Response Codes</h2>
+<table>
+  <tr><th>Code</th><th>Meaning</th><th>Response Body</th></tr>
+  <tr>
+    <td><code>201 Created</code></td>
+    <td>Registration successful</td>
+    <td><pre style="margin:0">{ "message": "User registered successfully",
+  "user": { "id": "...", "name": "Alice Smith",
+            "email": "alice@example.com",
+            "registrationDate": "2026-05-05T..." } }</pre></td>
+  </tr>
+  <tr>
+    <td><code>400 Bad Request</code></td>
+    <td>Missing field or password does not meet rules</td>
+    <td><pre style="margin:0">{ "error": "Password must be at least 8 characters,
+           include 1 uppercase letter and 1 special character" }</pre></td>
+  </tr>
+  <tr>
+    <td><code>409 Conflict</code></td>
+    <td>Email already registered</td>
+    <td><pre style="margin:0">{ "error": "Email already registered" }</pre></td>
+  </tr>
+  <tr>
+    <td><code>500 Internal Server Error</code></td>
+    <td>Unexpected server error (e.g., file I/O failure)</td>
+    <td><pre style="margin:0">{ "error": "Internal server error" }</pre></td>
+  </tr>
+</table>
+
+<h2>Security Notes</h2>
+<table>
+  <tr><th>Concern</th><th>Mitigation</th></tr>
+  <tr><td>Password storage</td><td>Passwords are <strong>never</strong> stored in plain text. Hashed with <strong>bcrypt</strong> (salt rounds: 10) before saving.</td></tr>
+  <tr><td>Transport security</td><td>All API calls must be made over <strong>HTTPS</strong> in production to prevent interception of credentials in transit.</td></tr>
+  <tr><td>Duplicate prevention</td><td>Email uniqueness is checked before inserting a new record; returns 409 Conflict if already exists.</td></tr>
+  <tr><td>Input validation</td><td>All fields are validated on <strong>both frontend and backend</strong> before any database operation is performed.</td></tr>
+  <tr><td>Response leakage</td><td>Password hash is <strong>never</strong> returned in the response. Only <code>id</code>, <code>name</code>, <code>email</code>, and <code>registrationDate</code> are sent back.</td></tr>
+</table>
+
+<h2>Data Saved to auth_user.json</h2>
+<pre>{
+  "id": "&lt;uuid-v4&gt;",
+  "name": "Alice Smith",
+  "email": "alice@example.com",
+  "password": "$2b$10$...&lt;bcrypt-hash&gt;...",
+  "registrationDate": "2026-05-05T10:30:00.000Z"
+}</pre>
+<div class="note">The <code>password</code> field is always a bcrypt hash — the plain-text password is never saved.</div>
+
+</body>
+</html>

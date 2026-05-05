@@ -1,0 +1,33 @@
+[
+  {
+    "orderId": "ORD-1777951072423-6231",
+    "createdAt": "2026-05-05T03:17:52.423Z",
+    "customer": {
+      "firstName": "Kitichet",
+      "lastName": "Phonsut",
+      "email": "kitichet.ph@gmail.com",
+      "address": "44 หมู่ 9",
+      "city": "วังทอง",
+      "country": "Select a country..."
+    },
+    "items": [
+      {
+        "productId": 101,
+        "name": "Electric Planer Brandix KL370090G",
+        "price": 699,
+        "quantity": 2
+      },
+      {
+        "productId": 102,
+        "name": "Undefined Tool IRadix DPS3000SY",
+        "price": 849,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 2247,
+    "tax": 157.29,
+    "shipping": 25,
+    "total": 2429.29,
+    "status": "confirmed"
+  }
+]

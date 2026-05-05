@@ -12,9 +12,10 @@
 const express = require('express');  // Import the Express framework
 const cors    = require('cors');     // Import CORS middleware to allow cross-origin requests
 
-const productsRouter = require('./routes/products');  // Import the products router
-const registerRouter = require('./routes/register');  // Import the registration router
-const loginRouter    = require('./routes/login');     // Import the login router
+const productsRouter  = require('./routes/products');   // Import the products router
+const registerRouter  = require('./routes/register');   // Import the registration router
+const loginRouter     = require('./routes/login');      // Import the login router
+const checkoutRouter  = require('./routes/checkout');   // Session 03: Checkout Flow router
 
 const app  = express();              // Create the Express application instance
 const PORT = process.env.PORT || 3001; // Use environment PORT or default to 3001
@@ -34,6 +35,8 @@ app.use('/api/products', productsRouter);
 app.use('/api/register', registerRouter);
 // Mount the login router — handles POST /api/login
 app.use('/api', loginRouter);
+// Mount the checkout router — handles POST /api/checkout (Session 03)
+app.use('/api', checkoutRouter);
 
 // ── Start Server ──────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
@@ -41,4 +44,5 @@ app.listen(PORT, () => {
     console.log(`[Server] Products: http://localhost:${PORT}/api/products?category=hat`);
     console.log(`[Server] Register: POST http://localhost:${PORT}/api/register`);
     console.log(`[Server] Login:    POST http://localhost:${PORT}/api/login`);
+    console.log(`[Server] Checkout: POST http://localhost:${PORT}/api/checkout`);
 });

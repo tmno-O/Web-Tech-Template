@@ -19,13 +19,19 @@ let cart = [];
 
 // ── Stubs / placeholders ──────────────────────────────────────
 
-// [Helper] isLoggedIn — placeholder, always guest for now
-const isLoggedIn = () => false;
+// [Helper] isLoggedIn — true when a JWT token exists in localStorage
+const isLoggedIn = () => localStorage.getItem('token') !== null;
 
-// [Helper] postToServer — stubbed /api/cart call
+// [Helper] postToServer — POST item to /api/cart with Bearer token auth
 const postToServer = (item) => {
-    console.log('[cart.js] POST /api/cart (stub):', item);
-    return Promise.resolve({ ok: true });
+    return fetch('http://localhost:3001/api/cart', {
+        method:  'POST',
+        headers: {
+            'Content-Type':  'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token'),
+        },
+        body: JSON.stringify(item),
+    });
 };
 
 // ── One-time CSS injection ────────────────────────────────────

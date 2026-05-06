@@ -77,8 +77,12 @@ router.post('/login', async (req, res) => { // Define the POST /login handler as
         // Step 3i: Sign the JWT with the secret key and set it to expire in 1 hour
         const token = jwt.sign(payload, SECRET_KEY, { expiresIn: '1h' }); // Returns a signed token string
 
-        // Step 4: Return 200 OK with the token so the client can store and use it
-        return res.status(200).json({ token }); // Send the token in the response body
+        // Step 4: Return 200 OK with the token and user's public info
+        return res.status(200).json({
+            token: token,       // JWT token for authenticated requests
+            name:  user.name,   // User's display name (for topbar UI update)
+            email: user.email   // User's email (for checkout form auto-fill)
+        });
 
     } catch (error) {
         // Step 4 (error path): Log the unexpected error server-side for debugging

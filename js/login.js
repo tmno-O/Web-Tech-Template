@@ -43,8 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
             var data = await response.json();
 
             if (response.ok) {
-                // Login succeeded — save the token in localStorage for later use
+                // Login succeeded — save the token, name, and email in localStorage
                 localStorage.setItem('token', data.token);
+                localStorage.setItem('userName', data.name || email.split('@')[0]);
+                localStorage.setItem('userEmail', email);
 
                 // Show a success message to the user
                 msgDiv.innerHTML = '<div class="alert alert-success">Login successful! Welcome back.</div>';

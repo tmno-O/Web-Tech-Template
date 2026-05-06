@@ -68,5 +68,19 @@
     "email": "james.wilson@email.com",
     "password": "$2b$10$a9bB4v2FD8tbzay4oiOqQ.xMBjldaIIskTNY1wg45NPjBnLR/Ih4S",
     "registrationDate": "2025-05-22T12:00:00.000Z"
+  },
+  {
+    "id": "02179a66-54ac-41d6-b742-68d7bdbaa7de",
+    "name": "Kitichet Phonsut",
+    "email": "kitichet.ph@gmail.com",
+    "password": "$2b$10$MGonEIXJJeLonPz2geNSUOB7W0aHuWtu.9B.6SLCLRuKn1AcXCQXe",
+    "registrationDate": "2026-05-06T06:31:11.962Z"
+  },
+  {
+    "id": "68bbd456-7c79-4157-89d0-709829fc4b08",
+    "name": "Mon",
+    "email": "Mon1234@gmail.com",
+    "password": "$2b$10$nyCFlCzLEFizyVJLeeoeReql7ozbdRJ3j7Mf/53nqWc5DPXKM9b2q",
+    "registrationDate": "2026-05-06T06:40:48.774Z"
   }
 ]

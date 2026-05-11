@@ -20,12 +20,22 @@
  * Logic Flow: server.js → [THIS FILE] → orders.json
  */
 
-const express = require('express');
-const fs      = require('fs');
-const path    = require('path');
+const express   = require('express');
+const fs        = require('fs').promises;
+const path      = require('path');
+const rateLimit = require('express-rate-limit');
 
-const router     = express.Router();
+const router      = express.Router();
 const ORDERS_PATH = path.join(__dirname, '../data/orders.json');
+
+// ── Rate limiter ──────────────────────────────────────────────────────────────
+const checkoutLimiter = rateLimit({
+    windowMs:        15 * 60 * 1000,
+    max:             10,
+    standardHeaders: true,
+    legacyHeaders:   false,
+    message:         { error: 'Too many checkout requests — please try again after 15 minutes.' },
+});
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
@@ -77,7 +87,7 @@ const CARD_REGEX = /^\d{16}$/;
  *   Is card invalid?      → 400 reject (do NOT clear frontend cart)
  *   All valid?            → recalculate total → try save → 201 success
  */
-router.post('/checkout', (req, res) => {
+router.post('/checkout', checkoutLimiter, async (req, res) => {
 
     // ── Phase 3: The Populated Object (Session 03, slide 12)
     // By the time we reach here, express.json() middleware has already
@@ -170,10 +180,10 @@ router.post('/checkout', (req, res) => {
         };
 
         // Read → parse → append → write  (simulated DB transaction)
-        const rawData  = fs.readFileSync(ORDERS_PATH, 'utf-8');
+        const rawData  = await fs.readFile(ORDERS_PATH, 'utf-8');
         const orders   = JSON.parse(rawData);
         orders.push(newOrder);
-        fs.writeFileSync(ORDERS_PATH, JSON.stringify(orders, null, 2), 'utf-8');
+        await fs.writeFile(ORDERS_PATH, JSON.stringify(orders, null, 2), 'utf-8');
 
         // ── STEP 7: Success Response ───────────────────────────────────
         // Only after a successful save do we tell the frontend to clear the cart.
@@ -193,9 +203,8 @@ router.post('/checkout', (req, res) => {
         // If saving fails, we do NOT clear the cart.
         // The frontend should detect a non-201 response and keep the cart intact.
         console.error('[Checkout] Save failed:', err.message);
-        return res.status(400).json({
-            error   : 'Order could not be saved. Please try again.',
-            details : err.message
+        return res.status(500).json({
+            error: 'Order could not be saved. Please try again.',
         });
     }
 });

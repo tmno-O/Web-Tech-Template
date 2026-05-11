@@ -1,7 +1,9 @@
 const sqlite3 = require('sqlite3').verbose();
 const path    = require('path');
 
-const DB_PATH = path.join(__dirname, 'store.db');
+// Use DB_PATH from env for flexibility (e.g., storing the DB outside the project dir).
+// Falls back to backend/store.db when the variable is empty or unset.
+const DB_PATH = process.env.DB_PATH || path.join(__dirname, 'store.db');
 
 // ── Connection ────────────────────────────────────────────────────────────────
 const db = new sqlite3.Database(DB_PATH, (err) => {

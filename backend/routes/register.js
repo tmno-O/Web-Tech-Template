@@ -9,19 +9,30 @@
  * Sequence: Client → server.js → [THIS FILE] → auth_user.json → [THIS FILE] → Client
  */
 
-const express  = require('express');  // Import the Express framework
-const bcrypt   = require('bcrypt');   // Import bcrypt for password hashing
-const fs       = require('fs').promises; // Import the fs module with promise-based API
-const path     = require('path');     // Import path for building file system paths
-const crypto   = require('crypto');   // Import built-in crypto for UUID generation
+const express   = require('express');         // Import the Express framework
+const bcrypt    = require('bcrypt');          // Import bcrypt for password hashing
+const fs        = require('fs').promises;    // Import the fs module with promise-based API
+const path      = require('path');           // Import path for building file system paths
+const crypto    = require('crypto');         // Import built-in crypto for UUID generation
+const rateLimit = require('express-rate-limit');
 
 const router = express.Router(); // Create a new Express Router instance
 
 // Path to the flat-file user database (relative to this file)
 const DB_PATH = path.join(__dirname, '..', 'data', 'auth_user.json');
 
-// Number of bcrypt salt rounds — higher = more secure but slower (10 is the standard)
-const SALT_ROUNDS = 10;
+// Salt rounds loaded from env so it can be tuned per environment without a code change.
+// Fallback to 10 (OWASP recommended minimum) if not set.
+const SALT_ROUNDS = parseInt(process.env.BCRYPT_SALT_ROUNDS, 10) || 10;
+
+// ── Rate limiter ──────────────────────────────────────────────────────────────
+const registerLimiter = rateLimit({
+    windowMs:        15 * 60 * 1000,
+    max:             10,
+    standardHeaders: true,
+    legacyHeaders:   false,
+    message:         { error: 'Too many registration attempts — please try again after 15 minutes.' },
+});
 
 /**
  * POST /api/register
@@ -38,7 +49,7 @@ const SALT_ROUNDS = 10;
  * @returns {409} { error } — email already registered
  * @returns {500} { error } — unexpected server error
  */
-router.post('/', async (req, res) => {
+router.post('/', registerLimiter, async (req, res) => {
     try {
         // Step 3a: Extract the three required fields from the request body
         const { name, email, password } = req.body;

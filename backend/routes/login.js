@@ -20,8 +20,9 @@ const router = express.Router(); // Create a new Express Router instance
 // Path to the flat-file user database
 const DB_PATH = path.join(__dirname, '..', 'data', 'auth_user.json');
 
-// Secret key used to sign the JWT — in production this must come from an environment variable
-const SECRET_KEY = process.env.JWT_SECRET || 'stroyka_secret_key_2025';
+// Secret key loaded exclusively from the environment — no hard-coded fallback.
+// server.js validates this is set before any route is reachable.
+const SECRET_KEY = process.env.JWT_SECRET;
 
 /**
  * POST /api/login
@@ -74,8 +75,8 @@ router.post('/login', async (req, res) => { // Define the POST /login handler as
             email: user.email // Include the user's email address
         };
 
-        // Step 3i: Sign the JWT with the secret key and set it to expire in 1 hour
-        const token = jwt.sign(payload, SECRET_KEY, { expiresIn: '1h' }); // Returns a signed token string
+        // Step 3i: Sign the JWT — expiry is controlled by JWT_EXPIRES_IN in .env
+        const token = jwt.sign(payload, SECRET_KEY, { expiresIn: process.env.JWT_EXPIRES_IN || '24h' });
 
         // Step 4: Return 200 OK with the token and user's public info
         return res.status(200).json({

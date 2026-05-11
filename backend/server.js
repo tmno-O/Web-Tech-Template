@@ -9,6 +9,40 @@
  *           Service → Controller → Router → [THIS FILE] → Browser
  */
 
+// Load .env variables before any other require so every module sees them.
+require('dotenv').config();
+
+// ── Environment variable validation ──────────────────────────────────────────
+// Collect ALL problems before exiting so the developer sees everything at once
+// rather than fixing one variable, restarting, and discovering the next one.
+const _envErrors = [];
+
+if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length <= 16) {
+    _envErrors.push('JWT_SECRET — must be set and longer than 16 characters');
+}
+
+if (
+    process.env.PORT !== undefined &&
+    (isNaN(Number(process.env.PORT)) || Number(process.env.PORT) <= 0)
+) {
+    _envErrors.push('PORT — must be a valid positive number (or leave unset to default to 3001)');
+}
+
+if (!['development', 'production'].includes(process.env.NODE_ENV)) {
+    _envErrors.push(
+        `NODE_ENV — must be "development" or "production" (got: "${process.env.NODE_ENV}")`
+    );
+}
+
+if (_envErrors.length > 0) {
+    console.error('❌ Missing or invalid environment variables:\n');
+    _envErrors.forEach(msg => console.error(`   • ${msg}`));
+    console.error('\n   Copy backend/.env.example to backend/.env and fill in the values.');
+    process.exit(1);
+}
+
+console.log('✅ Environment variables validated.');
+
 const express = require('express');  // Import the Express framework
 const cors    = require('cors');     // Import CORS middleware to allow cross-origin requests
 const helmet  = require('helmet');   // Secure HTTP response headers
@@ -33,7 +67,7 @@ app.use(helmet());
 // Allow cross-origin requests so the Stroyka frontend can call this API
 app.use(cors());
 // Parse incoming JSON request bodies so req.body is populated
-app.use(express.json());
+app.use(express.json({ limit: '10kb' }));
 // Serve static files (test.html) from the backend folder
 app.use(express.static(__dirname));
 

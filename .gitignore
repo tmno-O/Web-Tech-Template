@@ -1,2 +1,16 @@
 node_modules/
 .claude/
+
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal
+
+# OS artifacts
+.DS_Store
+Thumbs.db

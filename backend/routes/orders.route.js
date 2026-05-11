@@ -73,11 +73,30 @@ router.post('/', async (req, res) => {
 
     try {
         // ── 404: User existence check ─────────────────────────────────────────
-        // Parameterized query (?) prevents SQL Injection
-        const user = await getOne('SELECT id FROM users WHERE id = ?', [user_id]);
-        if (!user) {
-            return res.status(404).json({ error: `User with id ${user_id} not found.` });
+        // [MICROSERVICE BOUNDARY] — Identity Service
+        let identityRes;
+        try {
+            identityRes = await fetch('http://identity-service/api/users/verify', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({ user_id }),
+            });
+        } catch (networkErr) {
+            return res.status(503).json({ error: 'Identity Service unavailable' });
         }
+
+        if (!identityRes.ok) {
+            if (identityRes.status === 404) {
+                return res.status(404).json({ error: `User with id ${user_id} not found.` });
+            }
+            return res.status(503).json({ error: 'Identity Service unavailable' });
+        }
+
+        // Fallback — monolith / direct-DB mode:
+        // const user = await getOne('SELECT id FROM users WHERE id = ?', [user_id]);
+        // if (!user) {
+        //     return res.status(404).json({ error: `User with id ${user_id} not found.` });
+        // }
 
         // ── 404 / 409: Product existence + stock check ────────────────────────
         const resolvedItems = [];
